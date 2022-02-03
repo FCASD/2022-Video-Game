@@ -10,13 +10,21 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
 
 config/name="TSA-Video-Game"
+run/main_scene="res://Start.tscn"
 config/icon="res://icon.png"
+
+[debug]
+
+settings/fps/force_fps=60
+
+[global]
+
+fps=false
 
 [rendering]
 
