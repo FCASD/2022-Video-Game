@@ -14,7 +14,7 @@ public class Response1 : Button
     }
     public void onPress1(){
         NPCText npctext = (NPCText)GetParent();
-        
+        NPCText.count1++;
         npctext.dialogue("your mom","response1","response2","response3",1);
         
     }

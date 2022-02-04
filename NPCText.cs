@@ -3,7 +3,9 @@ using System;
 
 public class NPCText : Label
 {
-    
+    public static int count1=0;
+    public static int count2=0;
+    public static int count3=0;
    
      static int num=100;
      
@@ -21,32 +23,9 @@ public class NPCText : Label
     }
     
     public void dialogue(string Npctext, string response12,string response22,string response32, int check){
-       
-        if(check==1){
-            num=1;
-            
-            GD.Print(GetPath());
-             Button response1 =GetNode<Button>("Response1");
-             Button response2 =(Button)GetNode<Button>("Response2");
-             Button response3 =(Button)GetNode<Button>("Response3");
-             response1.Visible=false;
-             response2.Visible=false;
-             response3.Visible=false;
-            this.Visible=false;
-            
-        }else if(check==2){
-            num=2;
-            
-        }else if(check==3){
-            num=3;
-            
-        }else if(check==0){
             Button response1 =(Button)GetChild(0);
             Button response2 =(Button)GetChild(1);
             Button response3 =(Button)GetChild(2);
-            
-            
-            
             response1.Text=response12;
             response2.Text=response22;
             response3.Text=response32;
@@ -55,10 +34,29 @@ public class NPCText : Label
             response2.Visible=true;
             response3.Visible=true;
             this.Visible=true;
+            int count12=count1;
+            int count22=count2;
+            int count32=count3;
+            
+            
         }
         
        
         
+        
+        public void dialogueFinish(){
+            Button response1 =GetNode<Button>("Response1");
+            Button response2 =GetNode<Button>("Response2");
+            Button response3 =GetNode<Button>("Response3");
+            response1.Visible=false;
+            response2.Visible=false;
+            response3.Visible=false;
+            this.Visible=false;
+            
+
+
+
+            
         }
        
     }

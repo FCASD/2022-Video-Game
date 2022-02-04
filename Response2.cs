@@ -14,6 +14,7 @@ public class Response2 : Button
     }
     public void onPress2(){
         NPCText npctext = (NPCText)GetParent();
+        NPCText.count2++;
         npctext.dialogue("your mom","response1","response2","response3",2);
     }
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
