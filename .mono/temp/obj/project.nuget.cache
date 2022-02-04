@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "IJWnoFES633eHxcAyW/523xxjyXGC4mK28lQcNwrxaPOl0AzTe47oalrC7bWTRz1TgXFOoj7z0cDaqfwFzSrBw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\david\\Desktop\\godot\\TSA-Game\\TSA-Video-Game.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\david\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\david\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.0\\microsoft.netframework.referenceassemblies.net472.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
