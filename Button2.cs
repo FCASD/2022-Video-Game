@@ -4,7 +4,7 @@ using System;
 public class Button2 : Button
 {
     
-     private string[] sentences = {"example","more example","even more example","sdhuilflsildufsaduhilashuil"};
+     private string[] sentences = {"ding","yahahahahah","its rewind time","you know? if i could control rewind, i would want","Fortnite, and Marques Brownlee","yahahahah! thats hot! thats hot!"};
 
     int i =0;
     // Called when the node enters the scene tree for the first time.

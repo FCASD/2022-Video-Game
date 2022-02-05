@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://InterfaceSelection.cs" type="Script" id=1]
+[ext_resource path="res://other pngs/selected2.png" type="Texture" id=2]
+
+[node name="InterfaceSelection" type="Control"]
+margin_right = 300.0
+margin_bottom = 50.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_right = 93.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 60, 10 )
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_left = 1.0
+margin_top = 80.0
+margin_right = 17.0
+margin_bottom = 96.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

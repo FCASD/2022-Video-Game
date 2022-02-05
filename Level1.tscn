@@ -6,8 +6,8 @@
 [ext_resource path="res://Bouncer.cs" type="Script" id=4]
 [ext_resource path="res://NPCs/idlebouncer2.png" type="Texture" id=5]
 [ext_resource path="res://Player.cs" type="Script" id=6]
-[ext_resource path="res://InterfaceSelection2.tscn" type="PackedScene" id=7]
-[ext_resource path="res://InterfaceSelection.cs" type="Script" id=8]
+[ext_resource path="res://InterfaceSelection.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameManager.cs" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.5, 52 )
@@ -82,13 +82,15 @@ animations = [ {
 } ]
 
 [node name="GameManager" type="Node2D"]
-position = Vector2( -1, 2 )
+script = ExtResource( 8 )
 
 [node name="Interface" type="CanvasLayer" parent="."]
 script = ExtResource( 1 )
 
 [node name="Dialogue" type="Control" parent="Interface"]
 anchor_right = 1.0
+margin_left = 3.0
+margin_top = 1.0
 margin_bottom = 118.0
 script = ExtResource( 2 )
 __meta__ = {
@@ -131,19 +133,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="InterfaceSelection" parent="Interface/Dialogue/Popup/HBoxContainer" instance=ExtResource( 7 )]
+margin_right = 0.0
+margin_bottom = 36.0
+
 [node name="ColorRect" type="ColorRect" parent="Interface/Dialogue/Popup"]
 margin_right = 1025.0
 margin_bottom = 134.0
 color = Color( 1, 1, 1, 0.356863 )
-
-[node name="InterfaceSelection" type="Node2D" parent="Interface/Dialogue/Popup"]
-script = ExtResource( 8 )
-
-[node name="Label" type="Label" parent="Interface/Dialogue/Popup/InterfaceSelection"]
-margin_left = 26.0
-margin_top = 76.0
-margin_right = 263.0
-margin_bottom = 133.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -181,7 +178,7 @@ rotation = 4.71239
 enabled = true
 
 [node name="Bouncer" type="KinematicBody2D" parent="."]
-position = Vector2( 1, 81 )
+position = Vector2( 2, 96 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncer"]

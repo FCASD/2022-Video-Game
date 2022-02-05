@@ -8,7 +8,8 @@ public class NPCDialogue
     public List<NPCDialogue> NPCDialogues;
     public string DisplayText;
 
-    public NPCDialogue(List<InterfaceSelectionObject> interfaceSelections,string displayText,int index, List<NPCDialogue> dialogues=null){
+    public NPCDialogue(List<InterfaceSelectionObject> interfaceSelections,string displayText,int index, 
+    List<NPCDialogue> dialogues=null){
         InterfaceSelectionObjects=interfaceSelections;
         DisplayText=displayText;
         Index=index;
