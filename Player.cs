@@ -27,25 +27,31 @@ public class Player : KinematicBody2D
             this.Position +=new Vector2(SPEED,0);
             
         }
+        
         if(Input.IsActionJustPressed("ui_accept")){
                 if(GetNode<RayCast2D>("RayCastLeft").IsColliding()){
-                    Node obj = (Node)GetNode<RayCast2D>("RayCastRight").GetCollider();
-                    showBouncerDialogue(obj);
+                    Node obj = (Node)GetNode<RayCast2D>("RayCastLeft").GetCollider();
+                    showTheDialogue(obj);
                 }else if(GetNode<RayCast2D>("RayCastRight").IsColliding()){
                     Node obj = (Node)GetNode<RayCast2D>("RayCastRight").GetCollider();
-                    showBouncerDialogue(obj);
+                    showTheDialogue(obj);
             }
           //make raycastup and down
         } 
     }
   }
-  private void showBouncerDialogue(Node obj){
+  private void showTheDialogue(Node obj){
       
                 if(obj is Bouncer){
                     Bouncer bouncer = obj as Bouncer;
                     bouncer.setBouncerDialogue();
                     Interface.dialogueManager.showDialogue();
                     
+                }else if(obj is Bouncer2){
+                    Bouncer2 bouncer2 = obj as Bouncer2;
+                    bouncer2.setBouncer2Dialogue();
+                    Interface.dialogueManager.showDialogue();
                 }
+                
   }
 }

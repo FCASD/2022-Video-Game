@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Interface.cs" type="Script" id=1]
 [ext_resource path="res://Dialogue.cs" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Player.cs" type="Script" id=6]
 [ext_resource path="res://InterfaceSelection.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GameManager.cs" type="Script" id=8]
+[ext_resource path="res://Bouncer2.cs" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.5, 52 )
@@ -44,6 +45,9 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 147.5, 147 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 21.5, 50.5 )
@@ -112,6 +116,9 @@ margin_top = 7.0
 margin_right = 1023.0
 margin_bottom = 60.0
 text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Interface/Dialogue/Popup"]
 margin_left = 12.0
@@ -177,6 +184,10 @@ position = Vector2( 505, 507 )
 rotation = 4.71239
 enabled = true
 
+[node name="ChatHitbox" type="CollisionShape2D" parent="Player"]
+position = Vector2( 503.5, 508 )
+shape = SubResource( 15 )
+
 [node name="Bouncer" type="KinematicBody2D" parent="."]
 position = Vector2( 2, 96 )
 script = ExtResource( 4 )
@@ -187,5 +198,18 @@ shape = SubResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Bouncer"]
 position = Vector2( 199, 187 )
+scale = Vector2( 4.8125, 6.125 )
+frames = SubResource( 14 )
+
+[node name="Bouncer2" type="KinematicBody2D" parent="."]
+position = Vector2( 2, 96 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncer2"]
+position = Vector2( 413, 111 )
+shape = SubResource( 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Bouncer2"]
+position = Vector2( 416, 108 )
 scale = Vector2( 4.8125, 6.125 )
 frames = SubResource( 14 )
