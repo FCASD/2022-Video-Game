@@ -7,6 +7,7 @@ public class Bouncer2 : KinematicBody2D
     private string npcName;
     public override void _Ready()
     {
+        npcName="your mother. yeah i know who she is";
         InterfaceSelectionObject obj=new InterfaceSelectionObject(1,"Hello");
         InterfaceSelectionObject obj2=new InterfaceSelectionObject(2,"Nice to meet");
         InterfaceSelectionObject obj3=new InterfaceSelectionObject(3,"that ifs cool");
