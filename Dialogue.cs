@@ -31,6 +31,7 @@ public class Dialogue : Control
             if(item is Label||item is RichTextLabel||item is HBoxContainer||item is ColorRect){
                 
             }else{
+                
                 item.QueueFree();
             }
         }
@@ -90,13 +91,14 @@ public class Dialogue : Control
         }
     }
     private void shutDown(){
-        GD.Print("shutting down dialogue");
+        
         foreach(Node item in GetNode<Node>("Popup").GetChildren()){
-            
+          if(item is Label||item is RichTextLabel||item is HBoxContainer||item is ColorRect){
                 
-            
+            }else{
+               
                 item.QueueFree();
-            
+            }
         }
         GetNode<Popup>("Popup").Hide();
         GameManager.GlobalGameManager.gamePaused=false;
