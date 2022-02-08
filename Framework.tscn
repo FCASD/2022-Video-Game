@@ -51,9 +51,10 @@ script = ExtResource( 6 )
 
 [node name="Dialogue" type="Control" parent="Interface"]
 anchor_right = 1.0
-margin_left = 3.0
-margin_top = 1.0
-margin_bottom = 118.0
+margin_left = 7.0
+margin_top = 3.0
+margin_right = 4.0
+margin_bottom = 120.0
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -61,7 +62,6 @@ __meta__ = {
 InterfaceSelectableObject = ExtResource( 3 )
 
 [node name="Popup" type="Popup" parent="Interface/Dialogue"]
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -112,6 +112,7 @@ __meta__ = {
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 0, 1 )
+z_index = 2
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
@@ -141,3 +142,7 @@ enabled = true
 position = Vector2( 505, 507 )
 rotation = 4.71239
 enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 515, 476 )
+current = true
