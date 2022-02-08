@@ -44,14 +44,15 @@ public class Player : KinematicBody2D
       
                 if(obj is Bouncer){
                     Bouncer bouncer = obj as Bouncer;
-                    bouncer.setBouncerDialogue();
+                    bouncer.setNPCDialogue();
                     Interface.dialogueManager.showDialogue();
                     
                 }else if(obj is Bouncer2){
                     Bouncer2 bouncer2 = obj as Bouncer2;
-                    bouncer2.setBouncer2Dialogue();
+                    bouncer2.setNPCDialogue();
                     Interface.dialogueManager.showDialogue();
                 }
                 
   }
+  
 }

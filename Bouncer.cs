@@ -34,7 +34,7 @@ public class Bouncer : KinematicBody2D
     }
 
 
-    public void setBouncerDialogue(){
+    public void setNPCDialogue(){
         Interface.dialogueManager.npcDialogue=npcDialogue;
         Interface.dialogueManager.dialogueHeader=npcName;
     }
