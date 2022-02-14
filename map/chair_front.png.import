@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/table.png-e0a7acc253e72b10021272f7d29f980e.stex"
+path="res://.import/chair_front.png-ad9174d0adc0559df38adbca3710bcb4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://map/table.png"
-dest_files=[ "res://.import/table.png-e0a7acc253e72b10021272f7d29f980e.stex" ]
+source_file="res://map/chair_front.png"
+dest_files=[ "res://.import/chair_front.png-ad9174d0adc0559df38adbca3710bcb4.stex" ]
 
 [params]
 

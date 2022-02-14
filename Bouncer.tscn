@@ -16,7 +16,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 3.5, 3 )
+extents = Vector2( 3.5, 2 )
 
 [node name="Bouncer" type="RigidBody2D"]
 script = ExtResource( 6 )
@@ -29,5 +29,5 @@ frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 5 )
+position = Vector2( 0.5, 3 )
 shape = SubResource( 2 )

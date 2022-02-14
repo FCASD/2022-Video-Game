@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chairright.png-53726c254f5af2abd57e289311903d1c.stex"
+path="res://.import/billiard_table.png-b41dfd17fee62e148c01bdcfade7937e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://map/chairright.png"
-dest_files=[ "res://.import/chairright.png-53726c254f5af2abd57e289311903d1c.stex" ]
+source_file="res://map/billiard_table.png"
+dest_files=[ "res://.import/billiard_table.png-b41dfd17fee62e148c01bdcfade7937e.stex" ]
 
 [params]
 

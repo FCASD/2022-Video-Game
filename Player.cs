@@ -4,7 +4,7 @@ namespace TSAVideoGame
 {
     public class Player : Area2D
     {
-        [Export] public int Speed = 10;
+        [Export] public int Speed;
 
         public Vector2 ScreenSize;
 
@@ -17,6 +17,8 @@ namespace TSAVideoGame
         public override void _Process(float delta)
         {
             Vector2 velocity = Vector2.Zero;
+
+            ZIndex = (int) Position.y;
 
             if (Input.IsActionPressed("move_right"))
             {

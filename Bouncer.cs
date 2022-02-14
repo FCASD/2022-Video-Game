@@ -28,6 +28,11 @@ namespace TSAVideoGame
             //the player would have the choice to say either obj or obj2, since #relatable is the first in the list, if they say welcome, npc would response with your welcome
         }
 
+        public override void _Process(float delta)
+        {
+            ZIndex = (int) Position.y;
+        }
+
         public void SetNpcDialogue()
         {
             Interface.dialogueManager.npcDialogue = _npcDialogue;
