@@ -1,28 +1,29 @@
 using Godot;
-using System;
 
-public class NPCText : Label
+namespace TSAVideoGame
 {
-    public static int count1=0;
-    public static int count2=0;
-    public static int count3=0;
-   
-     static int num=100;
-     
-    public override void _Ready()
+    public class NPCText : Label
     {
-        dialogue("your mom","response1","response2","response3",0);
+        public static int count1=0;
+        public static int count2=0;
+        public static int count3=0;
+   
+        static int num=100;
+     
+        public override void _Ready()
+        {
+            dialogue("your mom","response1","response2","response3",0);
         
-    }
-    public void setText2(string ex){
-        this.Text=ex;
-    }
-    public void invisible(){
+        }
+        public void setText2(string ex){
+            this.Text=ex;
+        }
+        public void invisible(){
         
-        this.Visible=false;
-    }
+            this.Visible=false;
+        }
     
-    public void dialogue(string Npctext, string response12,string response22,string response32, int check){
+        public void dialogue(string Npctext, string response12,string response22,string response32, int check){
             Button response1 =(Button)GetChild(0);
             Button response2 =(Button)GetChild(1);
             Button response3 =(Button)GetChild(2);
@@ -60,6 +61,7 @@ public class NPCText : Label
         }
        
     }
+}
     
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)

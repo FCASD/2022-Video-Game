@@ -1,58 +1,73 @@
 using Godot;
-using System;
 
-public class Player : KinematicBody2D
+namespace TSAVideoGame
 {
-    public override void _Ready() {
-		GD.Print("Player loaded");
-	}
+    public class Player : Area2D
+    {
+        [Export] public int Speed = 10;
 
+        public Vector2 ScreenSize;
 
-  public override void _Process(float delta){
-	  float SPEED = 10;
-      if(GameManager.GlobalGameManager.gamePaused==false){
-        if(Input.IsKeyPressed((int)KeyList.W)){
-            this.Position +=new Vector2(0,-SPEED);
-            
+        public override void _Ready()
+        {
+            ScreenSize = GetViewportRect().Size;
+            GD.Print("Player loaded");
         }
-        if(Input.IsKeyPressed((int)KeyList.S)){
-            this.Position +=new Vector2(0,SPEED);
-            
-        }
-        if(Input.IsKeyPressed((int)KeyList.A)){
-            this.Position +=new Vector2(-SPEED,0);
-            
-        }
-        if(Input.IsKeyPressed((int)KeyList.D)){
-            this.Position +=new Vector2(SPEED,0);
-            
-        }
-        
-        if(Input.IsActionJustPressed("ui_accept")){
-                if(GetNode<RayCast2D>("RayCastLeft").IsColliding()){
-                    Node obj = (Node)GetNode<RayCast2D>("RayCastLeft").GetCollider();
-                    showTheDialogue(obj);
-                }else if(GetNode<RayCast2D>("RayCastRight").IsColliding()){
-                    Node obj = (Node)GetNode<RayCast2D>("RayCastRight").GetCollider();
-                    showTheDialogue(obj);
+
+        public override void _Process(float delta)
+        {
+            Vector2 velocity = Vector2.Zero;
+
+            if (Input.IsActionPressed("move_right"))
+            {
+                velocity.x += 1;
             }
-          //make raycastup and down
-        } 
+            else if (Input.IsActionPressed("move_left"))
+            {
+                velocity.x -= 1;
+            }
+            else if (Input.IsActionPressed("move_down"))
+            {
+                velocity.y += 1;
+            }
+            else if (Input.IsActionPressed("move_up"))
+            {
+                velocity.y -= 1;
+            }
+
+            AnimatedSprite animSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+
+            if (velocity.Length() > 0)
+            {
+                animSprite.Animation = "walk";
+                velocity = velocity.Normalized() * Speed;
+            }
+            else
+            {
+                animSprite.Animation = "idle";
+            }
+            
+            animSprite.Play();
+
+            Position += velocity * delta;
+            Position = new Vector2(
+                x: Mathf.Clamp(Position.x, 0, ScreenSize.x),
+                y: Mathf.Clamp(Position.y, 0, ScreenSize.y)
+            );
+
+            if (velocity.x != 0)
+            {
+                animSprite.FlipV = false;
+                animSprite.FlipH = velocity.x < 0;
+            }
+        }
+
+        public void OnPlayerBodyEntered(PhysicsBody2D body)
+        {
+            EmitSignal(nameof(UpdateEngagedNpc));
+        }
+
+        [Signal]
+        public delegate void UpdateEngagedNpc();
     }
-  }
-  private void showTheDialogue(Node obj){
-      
-                if(obj is Bouncer){
-                    Bouncer bouncer = obj as Bouncer;
-                    bouncer.setNPCDialogue();
-                    Interface.dialogueManager.showDialogue();
-                    
-                }else if(obj is Bouncer2){
-                    Bouncer2 bouncer2 = obj as Bouncer2;
-                    bouncer2.setNPCDialogue();
-                    Interface.dialogueManager.showDialogue();
-                }
-                
-  }
-  
 }

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/playerleft_walk_3.png-56355f896ce7d2b7a9dffe56ab60b02c.stex"
+path="res://.import/bouncer_idle_3.png-e693f8d9db0595f07fbc668f3d99a3b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/playerleft_walk_3.png"
-dest_files=[ "res://.import/playerleft_walk_3.png-56355f896ce7d2b7a9dffe56ab60b02c.stex" ]
+source_file="res://NPCs/Bouncer/bouncer_idle_3.png"
+dest_files=[ "res://.import/bouncer_idle_3.png-e693f8d9db0595f07fbc668f3d99a3b0.stex" ]
 
 [params]
 

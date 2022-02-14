@@ -1,27 +1,29 @@
 using Godot;
-using System;
 
-public class StartPlay : Button
+namespace TSAVideoGame
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
-
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
+    public class StartPlay : Button
     {
-        this.Connect("pressed",this,"onButtonPress");
-    }
-    public void onButtonPress(){
+        // Declare member variables here. Examples:
+        // private int a = 2;
+        // private string b = "text";
+
+        // Called when the node enters the scene tree for the first time.
+        public override void _Ready()
+        {
+            this.Connect("pressed",this,"OnButtonPress");
+        }
+        public void OnButtonPress(){
         
            
-           GetTree().ChangeScene("Exposition.tscn");
+            GetTree().ChangeScene("Exposition.tscn");
         
-    }
+        }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
- public override void _Process(float delta)
- {
+        public override void _Process(float delta)
+        {
      
- }
+        }
+    }
 }

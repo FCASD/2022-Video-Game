@@ -7,3 +7,12 @@ C:\Users\david\Desktop\godot\TSA-Game\.mono\temp\obj\Debug\TSA-Video-Game.Assemb
 C:\Users\david\Desktop\godot\TSA-Game\.mono\temp\obj\Debug\TSA-Video-Game.csproj.CoreCompileInputs.cache
 C:\Users\david\Desktop\godot\TSA-Game\.mono\temp\obj\Debug\TSA-Video-Game.dll
 C:\Users\david\Desktop\godot\TSA-Game\.mono\temp\obj\Debug\TSA-Video-Game.pdb
+C:\dev\Godot\TSA-Game\.mono\temp\bin\Debug\TSA-Video-Game.dll
+C:\dev\Godot\TSA-Game\.mono\temp\bin\Debug\TSA-Video-Game.pdb
+C:\dev\Godot\TSA-Game\.mono\temp\obj\Debug\TSA-Video-Game.csproj.AssemblyReference.cache
+C:\dev\Godot\TSA-Game\.mono\temp\obj\Debug\TSA-Video-Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\Godot\TSA-Game\.mono\temp\obj\Debug\TSA-Video-Game.AssemblyInfoInputs.cache
+C:\dev\Godot\TSA-Game\.mono\temp\obj\Debug\TSA-Video-Game.AssemblyInfo.cs
+C:\dev\Godot\TSA-Game\.mono\temp\obj\Debug\TSA-Video-Game.csproj.CoreCompileInputs.cache
+C:\dev\Godot\TSA-Game\.mono\temp\obj\Debug\TSA-Video-Game.dll
+C:\dev\Godot\TSA-Game\.mono\temp\obj\Debug\TSA-Video-Game.pdb
