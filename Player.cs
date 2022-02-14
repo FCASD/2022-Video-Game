@@ -26,7 +26,7 @@ namespace TSAVideoGame
             {
                 velocity.x -= 1;
             }
-            else if (Input.IsActionPressed("move_down"))
+            if (Input.IsActionPressed("move_down"))
             {
                 velocity.y += 1;
             }
