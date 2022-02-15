@@ -1,4 +1,5 @@
-.import
-.mono
-.vscode
-.idea
+*.import
+*.mono
+*.vscode
+*.idea
+*.cache
