@@ -45,7 +45,6 @@ Speed = 50
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 3
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -60,6 +59,3 @@ shape = SubResource( 3 )
 
 [node name="DialogShape2D" type="CollisionShape2D" parent="DialogArea2D"]
 shape = SubResource( 4 )
-
-[connection signal="area_entered" from="DialogArea2D" to="." method="OnNPCDialogAreaEntered"]
-[connection signal="area_exited" from="DialogArea2D" to="." method="OnNPCDialogAreaExited"]

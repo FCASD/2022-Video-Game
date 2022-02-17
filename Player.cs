@@ -64,15 +64,5 @@ namespace TSAVideoGame
                 animSprite.FlipH = velocity.x < 0;
             }
         }
-
-        public void OnNPCDialogAreaEntered(Area2D npcArea)
-        {
-            GD.Print("Area Entered");
-        }
-
-        public void OnNPCDialogAreaExited(Area2D npcArea)
-        {
-            GD.Print("Area Exited");
-        }
     }
 }
