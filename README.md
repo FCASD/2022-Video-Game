@@ -1,5 +1,5 @@
 # TSA-Game
-A Spy Game for a TSA States
+A Spy Game for a TSA States. Made with Godot.
 
 Made By -
 * William Rice <william@wfrice.dev>
