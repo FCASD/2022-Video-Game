@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Godot;
 
@@ -91,6 +90,8 @@ namespace TSAVideoGame
                 animSprite.FlipV = false;
                 animSprite.FlipH = velocity.x < 0;
             }
+            
+            GD.Print(EngagedNpc?.Name);
         }
 
         public void OnNpcEntered(Area2D npcArea)
@@ -98,14 +99,12 @@ namespace TSAVideoGame
             RigidBody2D npc = npcArea.GetParent<RigidBody2D>();
             if (_nearbyNpcs.Contains(npc)) _nearbyNpcs.Remove(npc);
             _nearbyNpcs.Add(npc);
-            GD.Print(EngagedNpc);
         }
 
         public void OnNpcExited(Area2D npcArea)
         {
             RigidBody2D npc = npcArea.GetParent<RigidBody2D>();
             if (_nearbyNpcs.Contains(npc)) _nearbyNpcs.Remove(npc);
-            GD.Print(EngagedNpc);
         }
     }
 }
