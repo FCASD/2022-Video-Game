@@ -34,7 +34,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 3.5, 2 )
+extents = Vector2( 3, 2 )
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 8.0
@@ -46,7 +46,6 @@ Speed = 50
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 4
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -54,7 +53,7 @@ current = true
 zoom = Vector2( 0.2, 0.2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 3 )
+position = Vector2( 0, 3 )
 shape = SubResource( 3 )
 
 [node name="DialogArea2D" type="Area2D" parent="."]
