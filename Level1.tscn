@@ -30,3 +30,7 @@ format = 1
 
 [node name="Bouncer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 58, 25 )
+
+[node name="Bouncer2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63, 17 )
+facingRight = false
