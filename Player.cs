@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Godot;
 
 namespace TSAVideoGame
@@ -8,12 +10,25 @@ namespace TSAVideoGame
 
         public Vector2 ScreenSize;
 
-        private RigidBody2D _engagedNpc;
+        private List<RigidBody2D> _nearbyNpcs;
+
+        public RigidBody2D EngagedNpc
+        {
+            get
+            {
+                if (_nearbyNpcs.Count > 0)
+                {
+                    return _nearbyNpcs[_nearbyNpcs.Count - 1];
+                }
+                return null;
+            }
+        }
 
         public override void _Ready()
         {
             ScreenSize = GetViewportRect().Size;
             GD.Print("Player loaded");
+            _nearbyNpcs = new List<RigidBody2D>();
         }
 
         public override void _Process(float delta)
@@ -71,13 +86,16 @@ namespace TSAVideoGame
         public void OnNpcEntered(Area2D npcArea)
         {
             RigidBody2D npc = npcArea.GetParent<RigidBody2D>();
-            GD.Print(npc);
+            if (_nearbyNpcs.Contains(npc)) _nearbyNpcs.Remove(npc);
+            _nearbyNpcs.Add(npc);
+            GD.Print(EngagedNpc);
         }
 
         public void OnNpcExited(Area2D npcArea)
         {
             RigidBody2D npc = npcArea.GetParent<RigidBody2D>();
-            GD.Print(npc);
+            if (_nearbyNpcs.Contains(npc)) _nearbyNpcs.Remove(npc);
+            GD.Print(EngagedNpc);
         }
     }
 }
