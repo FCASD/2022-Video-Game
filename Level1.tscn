@@ -29,7 +29,8 @@ format = 1
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="Bouncer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 58, 25 )
+position = Vector2( 57, 26 )
+z_index = 1
 
 [node name="Bouncer2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 63, 17 )

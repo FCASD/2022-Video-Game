@@ -18,8 +18,18 @@ namespace TSAVideoGame
             {
                 if (_nearbyNpcs.Count > 0)
                 {
-                    return _nearbyNpcs[_nearbyNpcs.Count - 1];
+                    RigidBody2D closest = _nearbyNpcs[0];
+                    foreach (RigidBody2D npc in _nearbyNpcs)
+                    {
+                        closest = closest.Position.DistanceSquaredTo(Position) >
+                                  npc.Position.DistanceSquaredTo(Position)
+                            ? npc
+                            : closest;
+                    }
+
+                    return closest;
                 }
+
                 return null;
             }
         }
