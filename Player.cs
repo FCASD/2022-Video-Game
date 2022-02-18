@@ -8,6 +8,8 @@ namespace TSAVideoGame
 
         public Vector2 ScreenSize;
 
+        private RigidBody2D _engagedNpc;
+
         public override void _Ready()
         {
             ScreenSize = GetViewportRect().Size;
@@ -28,6 +30,7 @@ namespace TSAVideoGame
             {
                 velocity.x -= 1;
             }
+
             if (Input.IsActionPressed("move_down"))
             {
                 velocity.y += 1;
@@ -48,11 +51,11 @@ namespace TSAVideoGame
             {
                 animSprite.Animation = "idle";
             }
-            
+
             animSprite.Play();
 
             MoveAndCollide(velocity * delta);
-            
+
             // Position = new Vector2(
             //     x: Mathf.Clamp(Position.x, 0, ScreenSize.x),
             //     y: Mathf.Clamp(Position.y, 0, ScreenSize.y)
@@ -63,6 +66,18 @@ namespace TSAVideoGame
                 animSprite.FlipV = false;
                 animSprite.FlipH = velocity.x < 0;
             }
+        }
+
+        public void OnNpcEntered(Area2D npcArea)
+        {
+            RigidBody2D npc = npcArea.GetParent<RigidBody2D>();
+            GD.Print(npc);
+        }
+
+        public void OnNpcExited(Area2D npcArea)
+        {
+            RigidBody2D npc = npcArea.GetParent<RigidBody2D>();
+            GD.Print(npc);
         }
     }
 }

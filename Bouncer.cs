@@ -7,14 +7,14 @@ namespace TSAVideoGame
     {
         [Export] public bool facingRight;
 
-        [Signal]
-        public delegate void NpcEntered();
-        
-        [Signal]
-        public delegate void NpcExited();
-
         private List<NPCDialogue> _npcDialogue;
         private string _npcName;
+
+        [Signal]
+        public delegate void NpcEntered();
+
+        [Signal]
+        public delegate void NpcExited();
 
         public override void _Ready()
         {
@@ -43,18 +43,6 @@ namespace TSAVideoGame
         {
             Interface.dialogueManager.npcDialogue = _npcDialogue;
             Interface.dialogueManager.dialogueHeader = _npcName;
-        }
-
-        public void OnPlayerEntered(Area2D playerArea)
-        {
-            GD.Print(playerArea.GetParent().Name + " entered " + Name);
-            EmitSignal("NpcEntered", this);
-        }
-
-        public void OnPlayerExited(Area2D playerArea)
-        {
-            GD.Print(playerArea.GetParent().Name + " exited " + Name);
-            EmitSignal("NpcExited", this);
         }
     }
 }

@@ -37,6 +37,7 @@ animations = [ {
 extents = Vector2( 3.5, 2 )
 
 [sub_resource type="CircleShape2D" id=4]
+radius = 8.0
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 27 )
@@ -59,3 +60,6 @@ shape = SubResource( 3 )
 
 [node name="DialogShape2D" type="CollisionShape2D" parent="DialogArea2D"]
 shape = SubResource( 4 )
+
+[connection signal="area_entered" from="DialogArea2D" to="." method="OnNpcEntered"]
+[connection signal="area_exited" from="DialogArea2D" to="." method="OnNpcExited"]
