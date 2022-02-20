@@ -91,7 +91,7 @@ namespace TSAVideoGame
                 animSprite.FlipH = velocity.x < 0;
             }
             
-            GD.Print(EngagedNpc?.Name);
+            // GD.Print(EngagedNpc?.Name);
         }
 
         public void OnNpcEntered(Area2D npcArea)

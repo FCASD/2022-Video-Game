@@ -22,14 +22,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "grab",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 17 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "grab",
 "speed": 5.0
 } ]
 
@@ -46,6 +46,7 @@ Speed = 50
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
