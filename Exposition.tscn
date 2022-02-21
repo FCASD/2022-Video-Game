@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ExpositionText.cs" type="Script" id=1]
+[ext_resource path="res://other pngs/hUWfY.png" type="Texture" id=2]
+[ext_resource path="res://Button2.cs" type="Script" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/COMIC.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+font_data = SubResource( 1 )
+
+[node name="Sprite" type="Sprite"]
+texture = ExtResource( 2 )
+
+[node name="ExpositionText" type="Label" parent="."]
+margin_left = 10.0
+margin_top = -3.0
+margin_right = 350.0
+margin_bottom = 202.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = SubResource( 2 )
+text = "Placeholder"
+align = 1
+valign = 1
+autowrap = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ExpositionText"]
+margin_left = 130.0
+margin_top = 174.333
+margin_right = 199.0
+margin_bottom = 194.333
+text = "Next"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer1" type="Timer" parent="."]

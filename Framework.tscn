@@ -1,0 +1,143 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://GameManager.cs" type="Script" id=2]
+[ext_resource path="res://InterfaceSelection.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player.cs" type="Script" id=4]
+[ext_resource path="res://Interface.cs" type="Script" id=6]
+[ext_resource path="res://Dialogue.cs" type="Script" id=7]
+[ext_resource path="res://player/idleplayer6.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.5, 52 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 9 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 9 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 9 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 9 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Interface" type="CanvasLayer" parent="."]
+script = ExtResource( 6 )
+
+[node name="Dialogue" type="Control" parent="Interface"]
+anchor_right = 1.0
+margin_left = 7.0
+margin_top = 3.0
+margin_right = 4.0
+margin_bottom = 120.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+InterfaceSelectableObject = ExtResource( 3 )
+
+[node name="Popup" type="Popup" parent="Interface/Dialogue"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Interface/Dialogue/Popup"]
+margin_left = 12.0
+margin_top = 7.0
+margin_right = 1023.0
+margin_bottom = 60.0
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Dialogue/Popup"]
+margin_left = 12.0
+margin_top = 31.0
+margin_right = 1020.0
+margin_bottom = 88.0
+text = "Test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface/Dialogue/Popup"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -35.0
+margin_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InterfaceSelection" parent="Interface/Dialogue/Popup/HBoxContainer" instance=ExtResource( 3 )]
+margin_right = 0.0
+margin_bottom = 36.0
+
+[node name="ColorRect" type="ColorRect" parent="Interface/Dialogue/Popup"]
+margin_right = 1025.0
+margin_bottom = 134.0
+color = Color( 1, 1, 1, 0.356863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 0, 1 )
+z_index = 2
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 502.5, 507 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( 506, 504 )
+scale = Vector2( 6.625, 6.78125 )
+frames = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RayCastLeft" type="RayCast2D" parent="Player"]
+position = Vector2( 502, 507 )
+rotation = 1.5708
+enabled = true
+
+[node name="RayCastRight" type="RayCast2D" parent="Player"]
+position = Vector2( 505, 507 )
+rotation = 4.71239
+enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 515, 476 )
+current = true
