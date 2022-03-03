@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Bouncer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://map/billiard_table.png" type="Texture" id=3]
+[ext_resource path="res://scripts/Dialogue.cs" type="Script" id=4]
 
 [sub_resource type="TileSet" id=18]
 0/name = "billiard_table.png 0"
@@ -27,11 +28,22 @@ tile_set = SubResource( 18 )
 format = 1
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+Speed = 70
 
 [node name="Bouncer" parent="." instance=ExtResource( 1 )]
+<<<<<<< HEAD
 position = Vector2( 57, 26 )
 z_index = 1
 
 [node name="Bouncer2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 63, 17 )
 facingRight = false
+=======
+position = Vector2( 68.125, 27.5 )
+
+[node name="Dialogue" type="Node" parent="Bouncer"]
+script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": "Main Dialogue Node"
+}
+>>>>>>> dialogue

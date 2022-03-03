@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\Godot\\TSA-Game\\TSA-Video-Game.csproj": {}
+    "/home/william/Documents/Code/TSA-Game/TSA-Video-Game.csproj": {}
   },
   "projects": {
-    "C:\\dev\\Godot\\TSA-Game\\TSA-Video-Game.csproj": {
+    "/home/william/Documents/Code/TSA-Game/TSA-Video-Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\Godot\\TSA-Game\\TSA-Video-Game.csproj",
+        "projectUniqueName": "/home/william/Documents/Code/TSA-Game/TSA-Video-Game.csproj",
         "projectName": "TSA-Video-Game",
-        "projectPath": "C:\\dev\\Godot\\TSA-Game\\TSA-Video-Game.csproj",
-        "packagesPath": "C:\\Users\\dorne\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\Godot\\TSA-Game\\.mono\\temp\\obj\\",
+        "projectPath": "/home/william/Documents/Code/TSA-Game/TSA-Video-Game.csproj",
+        "packagesPath": "/home/william/.nuget/packages/",
+        "outputPath": "/home/william/Documents/Code/TSA-Game/.mono/temp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dorne\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/william/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net472"
@@ -45,7 +45,7 @@
               "autoReferenced": true
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
         }
       }
     }
