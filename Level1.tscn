@@ -31,6 +31,14 @@ format = 1
 Speed = 70
 
 [node name="Bouncer" parent="." instance=ExtResource( 1 )]
+<<<<<<< HEAD
+position = Vector2( 57, 26 )
+z_index = 1
+
+[node name="Bouncer2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63, 17 )
+facingRight = false
+=======
 position = Vector2( 68.125, 27.5 )
 
 [node name="Dialogue" type="Node" parent="Bouncer"]
@@ -38,3 +46,4 @@ script = ExtResource( 4 )
 __meta__ = {
 "_editor_description_": "Main Dialogue Node"
 }
+>>>>>>> dialogue
