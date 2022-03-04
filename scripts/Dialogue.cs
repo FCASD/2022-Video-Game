@@ -31,7 +31,6 @@ public class Dialogue : Node
 			DialogueChoice dialog = new DialogueChoice(dialogueList, 0);
 
 
-
 			GD.Print(dialog.ToString());
 
 			GD.Print("Dialogue Loaded.");

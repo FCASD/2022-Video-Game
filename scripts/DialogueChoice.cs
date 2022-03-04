@@ -1,7 +1,9 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-
+///<summary>
+///Class <c>DialogueChoice</c> creates a dialogue object with choices
+///</summary>
 public class DialogueChoice : Node
 {
 	private string prompt;
@@ -10,7 +12,14 @@ public class DialogueChoice : Node
 	private int currentLevel;
 	public int lineNum;
 
+	///<summary>
+	///Constuctor <c>DialogueChoice</c> takes in an list of strings and the current line number
+	///</summary>
+	///<param name="lines">The list of lines in the script</param>
+	///<param name="lineNum">The starting line for the script</param>
 	public DialogueChoice(List<string> lines, int lineNum) {
+
+		// TODO redo all of this to be better recursion
 
 		this.lineNum = lineNum;
 		this.currentLevel = ((string) lines[lineNum]).Count("\t");
@@ -64,6 +73,9 @@ public class DialogueChoice : Node
 
 	}
 
+	///<summary>Checks the given line for any special cases</summary>
+	///<param name="line">Line to check</param>
+	///<returns>boolean (i forget why for rn)</returns>
 	private bool checkLine(string line) {
 
 		if (line.IndexOf('-') == 0) {
@@ -73,14 +85,20 @@ public class DialogueChoice : Node
 		return false;
 	}
 
+	///<summary>Returns the prompt</summary>
+	///<returns>Prompt in the form of a string</returns>
 	public string getPrompt() {
 		return this.prompt;
 	}
 
+	///<summary>Returns list of choices</summary>
+	///<returns>List of <c>string</c></returns>
 	public List<string> getChoices() {
 		return this.choices;
 	}
 
+	///<summary>Returns sub choices</summary>
+	///<returns>List of <c>DialogueChoices</c></returns>
 	public List<DialogueChoice> getSubChoices() {
 		return this.subChoices;
 	}
