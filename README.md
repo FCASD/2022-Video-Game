@@ -8,5 +8,3 @@ Made By -
 * James Harris <jimjimharris37@gmail.com>
 * Sam Kuhns
 * David Feder <federdavid06@gmail.com>
-
-# Important
